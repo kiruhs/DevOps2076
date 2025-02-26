@@ -92,9 +92,6 @@ import math
 # print("Hello" == 'Hello')
 # print("Hella" > "HellZ")
 
-# 18.02.2025
-
-
 # my_list = [3, -0.34, "Hello, world", False, None]
 # print(type(my_list))
 # print(my_list)
@@ -150,7 +147,7 @@ import math
 # print(ls)
 # ls2 = st.split()
 # print(ls2)
-fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+# fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 
 
 # sl = slice(2,3,1)
@@ -276,36 +273,30 @@ fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
 # print([[x for x in range(5)] for y in range(5)])
 
 
-# input two ordered by size lists into a new list that will be also ordered bi size
-# currently the progam includes bug, analyze the code and find this bug (it is very small fix, that is typical bug. I already found it, just want you to find is as well. Good luck)
-
-lst1 = [1, 4, 5, 7, 34, 67]
-lst2 = [2, 4, 6, 7, 58, 66, 69]
-lst3 = []
-
-i, j = 0, 0
-
-while i < len(lst1) and len(lst2):
-    if lst1[i] <= lst2[j]:
-        lst3.append(lst1[i])
-        i+=1
-        if i > len(lst1):
-            while j < len(lst2):
-                lst3.append(lst2[j])
-            j+=1
-    else:
-        lst3.append(lst2[j])
-        j+=1
-        if j > len(lst2):
-            while i <len(lst1):
-                lst3.append(lst1[i])
-                i+=1
-print(lst1)
-print(lst2)
-print(lst3)
-
-# 20.02.2025
-
+# lst1 = [1, 4, 5, 7, 34, 67]
+# lst2 = [2, 4, 6, 7, 58, 66, 69]
+# lst3 = []
+#
+# i, j = 0, 0
+#
+# while i < len(lst1) and len(lst2):
+#     if lst1[i] <= lst2[j]:
+#         lst3.append(lst1[i])
+#         i+=1
+#         if i >= len(lst1):
+#             while j < len(lst2):
+#                 lst3.append(lst2[j])
+#                 j+=1
+#     else:
+#         lst3.append(lst2[j])
+#         j+=1
+#         if j >= len(lst2):
+#             while i <len(lst1):
+#                 lst3.append(lst1[i])
+#                 i+=1
+# print(lst1)
+# print(lst2)
+# print(lst3)
 
 # lst = [56, 13, 37, 0, 5, 37, 34, 0, -4]
 #
@@ -473,9 +464,211 @@ import time
 # fun_country("USA")
 # fun_country()
 
-def call_child(*kids):
-    print("The name of child is ")
-    for i in kids:
-        print(i)
+# def call_child(*kids):
+#     print("The name of child is ")
+#     for i in kids:
+#         print(i)
+#
+# call_child("Mary", "Sam", "Bob", "Emily")
 
-call_child("Mary", "Sam", "Bob", "Emily")
+
+# 25.02.2025
+
+# def fibo_test(x):
+#     a, b, num = 0, 1, 0
+#
+#     if 1 >= x:
+#         return x
+#
+#     while x > 1:
+#         num = a + b
+#         a = b
+#         b = num
+#         x -= 1
+#     return num
+#
+#
+# num_fib = int(input("Enter the number: "))
+#
+# print(fibo_test(num_fib))
+
+
+# _str = "this year 2025 is very challenging"
+
+# lst = _str.split()
+# print(lst)
+
+# lst2 = list(_str)
+# print(lst2)
+
+# strg = 'this year 2025 is very challenging'
+# lst1 = []
+# for i in strg:
+#     if i.isalpha():
+#         lst1.append(i)
+# print(lst1)
+
+# print([x for x in strg if x.isalpha()])
+
+
+# Fibonacci
+# 1,1,2,3,5,8,13,21...
+
+# def fibo(x):
+#     num =890
+#     seq = [1, 1]
+#     for i in range(2,x):
+#         # next_num = seq[i-1] + seq[i-2]
+#         # seq.append(next_num)
+#         seq.append(seq[i-1] + seq[i-2])
+#     return seq
+#
+# num = int(input("Enter the number of fibonacci elements you want: "))
+# # print(fibo(num))
+#
+#
+# x = [int((0.5 + 5**0.5/2)**n / 5**0.5 +0.5) for n in range(1, num+1)]
+# print(x)
+
+# def fibo_rec(n):
+#     if n in {0, 1}:
+#         return n
+#     # print(n)
+#     return fibo_rec(n-1) + fibo_rec(n-2)
+#
+# print([fibo_rec(n) for n in range(1, num+1)])
+
+# import platform
+# print(platform.python_implementation())
+
+# def my_fun(x):
+#     x = 20
+#     return x
+#
+# x = 10
+# my_fun(x)
+#
+# print(my_fun(x))
+
+# def my_list(lst):
+#     for i in range(len(lst)):
+#         lst[i]+=10
+#
+# lst2 = [1, 2, 4, 7]
+# my_list(lst2)
+# print(lst2)
+
+# fruits = ['banana', 'orange', 'kiwi', 'peach', '4' ]
+# fruits.sort()
+# print(fruits)
+#
+# print(sorted(fruits, key=len, reverse=True))
+# print(fruits)
+
+# veget = ['potato', 'tomato', 'cucumber', 'corn']
+#
+# lst3 = veget + fruits
+# print(lst3)
+#
+# veget += fruits
+# print(veget)
+
+# for x in veget:
+#     fruits.append(x)
+#
+# print(fruits)
+
+# prime numbers
+#
+# from prime import fast_prime, prime_classic
+#
+# def list_of_primes_classic(num:int):
+#
+#     """This function builds a list and return it with specified amount of prime number
+#     using classic algorithm. num - the maximal number that limits the prime numbers
+#     """
+#
+#     ls = []
+#     for i in range(num+1):
+#         if prime_classic(i):
+#             ls.append(i)
+#     return ls
+#
+#
+# def list_of_primes_fast(num):
+#     ls = []
+#     for i in range(num+1):
+#         if fast_prime(i):
+#             ls.append(i)
+#     return ls
+#
+# import time
+#
+# start = time.time()
+# list_of_primes_fast(10000)
+# print(time.time() - start)
+#
+#
+# start = time.time()
+# list_of_primes_classic(10000)
+# print(time.time() - start)
+#
+# help(list_of_primes_classic)
+# help(list_of_primes_fast)
+
+# greeting = lambda : print("Hello, world!")
+# greeting()
+#
+# # greet_user = lambda name : print("Hello," , name)
+# # greet_user('Alexander')
+#
+# (lambda name : print("Hello," , name))('Ilon Musk')
+#
+# x = lambda x: x+1
+# print(x(2))
+
+lst = [5, -14, (lambda x: x**3)(2), -44]
+# print(lst)
+
+# num = int(input("Enter the number: "))
+# lst = ["number is", num, "square is", (lambda x: x*x)(num), True]
+# print(lst)
+
+# def get_filter(l, filter=None):
+#     if filter is None:
+#         return l
+#     res = []
+#     for x in l:
+#         if filter(x):
+#             res.append(x)
+#     return res
+# print(lst)
+# print(get_filter(lst, lambda x: x%2 ==0))
+# print(get_filter(lst, lambda x: x>0 and x%2==0))
+
+# map filter
+
+# lst2 = [1, 3, 6, 20, 90]
+# for i in range(len(lst2)):
+#     lst2[i]*=lst2[i]
+# print(lst2)
+
+
+# m = map(lambda x:x*x, lst2)
+# print(*lst2)
+
+# f = filter(lambda x: x%3==0, lst2)
+# print(*f)
+
+# lis = [[1,'s',2],[3,'a',3],[-2,'w',10]]
+# print(sorted(lis))
+# print(sorted(lis, key=lambda lis: lis[2], reverse=True))
+# print(sorted(lis, key=lambda lis: lis[0]**2))
+
+
+str1 = "We are very happy to meet the neighbours and congratulate them with a new year"
+ls_str=str1.split()
+print(ls_str)
+print(sorted(ls_str, key=lambda ls_str: len(ls_str)))
+print(len(ls_str))
+print(sum(map(len, ls_str))/len(ls_str))
