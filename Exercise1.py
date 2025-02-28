@@ -1,3 +1,6 @@
+from itertools import count
+
+from encodings.idna import sace_prefix
 from os import remove
 
 x = 3
@@ -471,9 +474,6 @@ import time
 #
 # call_child("Mary", "Sam", "Bob", "Emily")
 
-
-# 25.02.2025
-
 # def fibo_test(x):
 #     a, b, num = 0, 1, 0
 #
@@ -627,7 +627,7 @@ import time
 # x = lambda x: x+1
 # print(x(2))
 
-lst = [5, -14, (lambda x: x**3)(2), -44]
+# lst = [5, -14, (lambda x: x**3)(2), -44]
 # print(lst)
 
 # num = int(input("Enter the number: "))
@@ -666,9 +666,273 @@ lst = [5, -14, (lambda x: x**3)(2), -44]
 # print(sorted(lis, key=lambda lis: lis[0]**2))
 
 
-str1 = "We are very happy to meet the neighbours and congratulate them with a new year"
-ls_str=str1.split()
-print(ls_str)
-print(sorted(ls_str, key=lambda ls_str: len(ls_str)))
-print(len(ls_str))
-print(sum(map(len, ls_str))/len(ls_str))
+# str1 = "We are very happy to meet the neighbours and congratulate them with a new year"
+# ls_str=str1.split()
+# print(ls_str)
+# print(sorted(ls_str, key=lambda ls_str: len(ls_str)))
+# print(len(ls_str))
+# print(sum(map(len, ls_str))/len(ls_str))
+
+
+# lst_subseq = [10, 22, 20, 30, 45, 40, 50, 30, 30, 20]
+
+# def longest_increasing_subsequence(arr):
+#     if not arr:
+#         return 0
+#
+#     n = len(arr)
+#     dp = [1]*n
+#
+#     for i in range(1, n):
+#         for j in range(i):
+#             if arr[i] > arr[j]:
+#                 dp[i] = max(dp[i], dp[j] + 1)
+#
+#     return max(dp)
+
+# print(longest_increasing_subsequence(lst_subseq))
+
+# def long_sub(lst):
+#     if not lst:
+#         return 0
+#     num = 1
+#     arr = []
+#     for i in range(len(lst) - 1):
+#         if lst[i] < lst[i+1]:
+#             num += 1
+#         else:
+#             arr.append(num)
+#             num = 1
+#     return max(arr)
+#
+# arr = [10, 20, 30, 40, 50, 30, 30, 20]
+# print(long_sub(arr))
+
+# lst1 = [1, 2, 3]
+# lst2 = [4, 5, 6]
+# lst3 = [7, 8, 9]
+#
+# def add_three_given_lists(a, b, c):
+#     return list(map(lambda a, b, c: a+b+c, a, b, c))
+#
+# print(add_three_given_lists(lst1, lst2, lst3))
+
+# size = 9
+#
+# for i in range(size):
+#     if i == size-1 or i == 0:
+#         print(size*'*')
+#     else:
+#         print(' '*(size-i-1)+'*')
+
+# st = {'a', 1, 4, 8, 3, 1,(3,(4,8, 'tre'), 4), 'g'}
+# print(st)
+# print(len(st))
+
+# st2 = {3, 'a', 7, *[5, 'f', 7]}
+# print(st2)
+
+
+# strn = 'abracadabra'
+# set1 = set(strn)
+# print(set1)
+
+# new_str = "|".join(set1)
+# print(new_str)
+
+# set1.add('t')
+# print(set1)
+# set1.remove('d')
+# print(set1)
+# # set1.remove('d') # cannot remove the element that doesn't exist - receives error
+# set1.discard('d')
+# set1.discard('b')
+# print(set1)
+
+# st1 = {'a', 'b', 'c'}
+# st2 = {'d', 'e'}
+# print(id(st1))
+# st1.update(st2)
+# print(st1)
+# print(id(st1))
+
+# fruits = {"apple", "banana", "cherry"}
+# tropical = ["mango", "pineapple"]
+# fruits.update(tropical)
+# print(fruits)
+#
+# new_fruits = fruits.union(tropical)
+# print(new_fruits)
+# for i in range(3):
+#     fruits.pop()
+# print(fruits)
+
+# fruits.clear()
+
+# del fruits
+# print(fruits)
+
+# intersection
+
+# st1 = {2, 6, 9, 4}
+# st2 = {4, 8, 6, -1}
+# st11 = {10, 20, 6, 4, "Hello"}
+
+# st3 = st1.intersection(st2)
+# print(st3)
+# st4 = st1 & st2 & st11 # intersection
+# print(st4)
+# st5 = st1.union(st2)
+# print(st5)
+# st6 = st1 | st2 | st11 # union
+# print(st6)
+
+# print(st1)
+# print(st2)
+# print(st1.difference(st2))
+# print(st2.difference(st1))
+#
+# print(st1 - st2) # difference
+
+# st1.difference_update(st2)
+# st1-=st2 # the same action as in the row above
+# print(st1)
+
+# st1.intersection_update(st2)
+# st1 &= st2 # the same action as in the row above
+# print(st1)
+
+# st1 |= st2 # makes an action like union update
+# print(st1)
+
+# print(st1.symmetric_difference(st2))
+# print(st1 ^ st2)
+#
+# # st1.symmetric_difference_update(st2)
+# st1^=st2
+# print(st1)
+
+# print(dir(st1))
+
+# st1 = {True, 2, False}
+# st2 = {False, 2, 1, 0, 5, True}
+#
+# print(st1)
+# print(st2)
+# print(st1.issubset(st2))
+# print(st2.issuperset(st1))
+
+lst1 = list(range(1000))
+# lst2 = list(range(100))
+# lst1 += lst2
+# # print(lst1)
+# lst1 = set(lst1)
+# print(lst1)
+
+# print(hash(50))
+# for i in lst1:
+#     i*=1000
+#     print(i, end=", ")
+# for i in lst1:
+#     print(i, end=", ")
+# import time
+# MAX_VALUE = 80_000_000
+# SEARCH_ITEM = 79_999_900
+#
+# def measure_time(data):
+#     start = time.time()
+#     if SEARCH_ITEM in data:
+#         return time.time() - start
+# st = set(range(1, MAX_VALUE))
+# lst = list(range(1, MAX_VALUE))
+# print(f"Set search time: {measure_time(st)}")
+# print(f"List search time: {measure_time(lst)}")
+
+# st = {"Hello", "world", "we", "learn", "python"}
+# print(st)
+# st.add("Bye-bye")
+# print(st)
+# st = frozenset(st)
+# print(type(st))
+# print(st)
+# st = set(st)
+
+# size = 6
+# # for i in range(size+1):
+# #     print("*" * i)
+#
+# for i in range(size+1):
+#     print(" "*(size-i)+"*"*i)
+
+from pprint import pprint
+# Dictionary
+# thisdict = {
+#     "brand":"Ford",
+#     "model": "Mustang",
+#     "Year of building": 1968,
+#     "Year of product": 1968,
+#     "color": ["red", "white", "blue"]}
+#
+# print(type(thisdict))
+# print(len(thisdict))
+# pprint.pprint(thisdict)
+#
+# x = thisdict.get("Model") # not case sensitive
+# print(x)
+
+dct = dict(name = "John", age = 36, country = "Ireland", city = 'Dublin', car = 'Rover')
+# pprint(dct)
+dct["watch"] = "Seiko"
+#
+# dct["car"] = "Audi"
+# pprint(dct)
+# print(dct.keys())
+# print(dct.values())
+# print(dct.items())
+# if "age" in dct:
+#     print("Yes")
+# else:
+#     print("No")
+# dct.update({"age": 40})
+# pprint(dct)
+#
+# print(dct.pop("car"))
+# pprint(dct)
+#
+# print(dct.popitem())
+# pprint(dct)
+
+# for x in dct:
+#     print(x, dct[x])
+#
+# for x in dct.keys():
+#     print(x)
+
+# for x in dct.values():
+#     print(x)
+#
+# for x in dct.items():
+#     print(x, x[1])
+
+# for x, y in dct.items():
+#     print(x, y)
+#
+# dct2 = dct.copy()
+# pprint(dct2)
+# pprint(dct == dct2)
+# dct3 = dict(dct)
+
+
+myfamily = {
+    "child1":{
+        "name": "John",
+        "year": 2001
+    },
+    "child2":{
+        "name": "Mary",
+        "year": 2005,
+        "hobby": "singing"
+    }
+}
+pprint(myfamily)
+print(myfamily.get("child1"))
