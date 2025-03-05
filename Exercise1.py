@@ -1,7 +1,3 @@
-from itertools import count
-
-from encodings.idna import sace_prefix
-from os import remove
 
 x = 3
 y = x
@@ -923,16 +919,190 @@ dct["watch"] = "Seiko"
 # dct3 = dict(dct)
 
 
-myfamily = {
-    "child1":{
-        "name": "John",
-        "year": 2001
-    },
-    "child2":{
-        "name": "Mary",
-        "year": 2005,
-        "hobby": "singing"
-    }
-}
-pprint(myfamily)
-print(myfamily.get("child1"))
+# myfamily = {
+#     "child1":{
+#         "name": "John",
+#         "year": 2001
+#     },
+#     "child2":{
+#         "name": "Mary",
+#         "year": 2005,
+#         "hobby": "singing"
+#     }
+# }
+# # pprint(myfamily)
+# print(myfamily["child1"])
+# print(myfamily["child1"]["name"])
+
+# list: search (x in list) O(n) - linear; get by index (list[i]) O(1)
+# dictionary: search (x in dict) O(1) - constant; dict[key] O(1)
+
+# import timeit
+# big_list = list(range(70_000_000))
+# # lst = [i for i in range(1000)]
+# big_dict = {i: None for i in range(70_000_000)}
+# print(big_dict.__sizeof__())
+# print(big_list.__sizeof__())
+# target = 999_999
+
+# list_time = timeit.timeit(lambda : target in big_list, number=10)
+# print(f"Search in list took: {list_time:.8f} seconds")
+#
+# dict_time = timeit.timeit(lambda : target in big_dict, number=10)
+# print(f"Search in dict took: {dict_time:.8f} seconds")
+
+# Create dictionary
+# 1 method
+
+# x = ("key1", "key2", "key3")
+# y = 0
+#
+# new_dict = dict.fromkeys(x, y)
+# print(new_dict)
+
+# 2 method
+# keys = ('a', 'b', 'c')
+# values = (1, 2, 3)
+# dict2 = {keys[i]:values[i] for i in range(len(keys))}
+# print(dict2)
+#
+# # 3 method
+# dict3 = dict(zip(keys, values))
+# print(dict3)
+
+# st = "12 31 4 53 6 7 4 90 8 7 56 3 42"
+# my_dict = {int(k): int(k)*2 for k in st.split() if int(k)%2 == 0}
+# print(my_dict)
+
+# wow {'w': 2, 'o':1}
+
+# st = "Hello, Israel. We learn DevOps in Specter college. Python is wonderful language"
+#
+# def create_sym_dict(input_string):
+#     symbol_dict = {}
+#
+#     for symbol in input_string:
+#         if symbol in symbol_dict:
+#             symbol_dict[symbol] += 1
+#         else:
+#             symbol_dict[symbol] = 1
+#     return symbol_dict
+#
+# res = create_sym_dict(st.lower().replace(" ",""))
+# print(res)
+
+# empty_dict = dict.fromkeys(["apple", "ball", "orange"])
+# print(empty_dict)
+# nonempty_dict = dict.fromkeys(["apple", "ball", "orange"], "xyz")
+# print(nonempty_dict)
+
+# x = {1:2, 3:4, 4:3, 2:1, 0:0}
+# print(x)
+# print(sorted(x))
+# print(dict(sorted(x.items())))
+# print(dict(sorted(x.items(), key=lambda item: item[1])))
+# print({k:v for k, v in sorted(x.items(), key=lambda item: item[1])})
+
+# def func(a=0, b=0):
+#     return a + b
+#
+# my_dict = {'a':2, 'b':3}
+# # result = func(my_dict['a'], my_dict['b'])
+# result = func(**my_dict)
+# print(result)
+# print(*my_dict)
+
+# num = [2, 18, 5, 7, 2, 32, 6, 5, 9, 4, 8, 7, 9, 12, 14, 14]
+# my_dict = {n:num.count(n) for n in num}
+# print(my_dict)
+
+# dict1 = {'item': 'jacket', 'size': 'L', 'color': 'black'}
+# dict2 = {'model': '35mr', 'quantity': 30, 'color': 'blue'}
+# new = {}
+
+# for _ in dict1:
+#     new.update(dict1.items())
+# for _ in dict2:
+#     new.update(dict2.items())
+#
+# print(new)
+
+# print({**dict1, **dict2})
+
+# my_dict = {'age': 25, 'name': 'Roman'}
+# print(my_dict.get('age'))
+# my_dict.setdefault('hair color')
+# print(my_dict)
+
+# month = {1:'Январь', 2: 'Февраль', 3: 'Март', 4: 'Апрель', 5: 'Май'}
+# num = int(input("Введите номер месяца: "))
+# print(month.get(num))
+
+# Interactive vocabulary
+
+# words = {}
+# print("This is the dictionary that you create yourself, just enter a word: ")
+# while True:
+#     w = input()
+#     if w == "":
+#         exit()
+#         # exit(1)
+#     if w in words:
+#         print("the word", w, "is translated as", words[w])
+#     else:
+#         print("Type the translation in Russian of", w)
+#         words[w] = input()
+
+
+# lst = ["apple", "pineapple", "green apple"]
+# print({name:len(name) for name in lst})
+
+
+# def cnt_words(text):
+#     words_count = {}
+#     for word in text.split():
+#         if word in words_count:
+#             words_count[word] += 1
+#         else:
+#             words_count[word] = 1
+#     return words_count
+#
+# with open("C:/tmp/russian.txt", encoding='utf8') as file:
+#     content = file.read()
+#     # print(type(content))
+# words_dict = cnt_words(content)
+# # pprint(words_dict)
+# pprint(sorted(words_dict.items(), key= lambda x: x[1], reverse=True))
+
+# def my_fish(**fishes):
+#     # print(f"I have {guppies} guppy fish")
+#     # print(f"I have {zebras} zebra fish")
+#     # print(f"I have {bettas} betta fish")
+#     for name, amount in fishes.items():
+#         print(f"I have {amount} {name}")
+# fish = {
+#     "guppies": 2,
+#     "zebras":5,
+#     # "bettas": 10,
+#     # "salmon": 12,
+#
+#     "shark":1,
+#     "tuna": 15
+# }
+# my_fish(**fish)
+
+# lst = [1, 2, 3, 4]
+# # dct = {1: {2: {3: {4:{}}}}}
+#
+# dct = current = {}
+# for i in lst:
+#     current[i] = {}
+#     current = current[i]
+# print(dct)
+
+def del_from_tuple(tpl, elem):
+    lst = list(tpl)
+    if elem in tpl:
+        lst.remove(elem)
+    return tuple(lst)
+print(del_from_tuple((1, 2, 3), -1))
