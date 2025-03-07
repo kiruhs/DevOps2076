@@ -1,4 +1,5 @@
 
+
 x = 3
 y = x
 
@@ -1100,9 +1101,225 @@ dct["watch"] = "Seiko"
 #     current = current[i]
 # print(dct)
 
-def del_from_tuple(tpl, elem):
-    lst = list(tpl)
-    if elem in tpl:
-        lst.remove(elem)
-    return tuple(lst)
-print(del_from_tuple((1, 2, 3), -1))
+# def del_from_tuple(tpl, elem):
+#     lst = list(tpl)
+#     if elem in tpl:
+#         lst.remove(elem)
+#     return tuple(lst)
+# print(del_from_tuple((1, 2, 3), -1))
+
+# Home exercise
+# Validity of parentheses "{f[t(r<dfgsdf,dsfds>)dsdfs]sdfd}"
+
+#LIFO --- FIFO
+# if 5 < 8:
+#     print("Ok")
+#
+# print("ok") if 5 < 8 else print()
+
+
+
+# def is_balanced(st):
+#     stack = []
+#     mapping = {')': '(', ']': '[', '}': '{', '>': '<'}
+#
+#     for char in st:
+#         if char in mapping:
+#             top = stack.pop() if stack else '#'
+#             if mapping[char] != top:
+#                 return False
+#
+#         elif char not in mapping.values():
+#             continue
+#         else:
+#             stack.append(char)
+#     return not stack
+#
+# print(is_balanced("{f[t(r<dfgsdf,dsfds>)dsdfs]sdfd}"))
+# int("hello")
+# dict5 = {'a': 2, 'b': 32, 'c': 10}
+#
+# print({v: k for k, v in dict5.items() if not isinstance(v, (list, dict, set))})
+
+# Exceptions handling
+
+# def division(a, b):
+#     try:
+#         # x, y = 5, 'a'
+#         # x = x = yy
+#         return a/b
+#     # except  ZeroDivisionError:
+#     #     return None
+#     # except TypeError:
+#     #     return "typeerror"
+#     #
+#     # except NameError as n:
+#     #     return "nameerror"
+#     except (ZeroDivisionError, TypeError, NameError) as exp:
+#         print(exp)
+#     finally:
+#         print("The program continue any way")
+#
+# x, y = 5, 0
+#
+# res = division(x,y)
+# print(res)
+
+
+# f = open("c:/tmp/2600-h.htm", encoding='utf8')
+# f.readline()
+# f.close()
+
+# try:
+#     with open("c:/tmp/2600-h.htm", encoding='utf8') as f:
+#         f.readline()
+#         print("The file was open successfully")
+# except FileNotFoundError:
+#     print("No such file, try another one")
+# print("Continue my work")
+
+# try:
+#     raise ValueError("This is a custom error message")
+# except ValueError as e:
+#     print("An error occured: ", e)
+#
+# try:
+#     w = int(input("Enter your weight: "))
+#     assert w>=0, "Only positive numbers are allowed"
+# except AssertionError as e:
+#     print(e)
+
+# while True:
+#     try:
+#         x = int(input("Enter a number: "))
+#         print("Good guy!")
+#         break
+#     except ValueError:
+#         print("Oops! That was no valid number. Try again...")
+# def test_list_operations(num):
+#     try:
+#         r1 = num.length
+#         print("Length of the list is:",r1)
+#     except AttributeError:
+#         print("Error: the list does not have a 'length' attribute")
+# nums = [1, 3, 4, 0, 5, 7]
+# test_list_operations(nums)
+
+# with open("c:/tmp/file1.txt", encoding='utf8') as f:
+    # print(f.read())
+    # text = f.read()
+    # f.seek(20)
+    # txt = f.readline()
+    # p = f.tell()
+    # for line in f:
+    #     print(line, end="")
+# print(txt)
+# print(text)
+# print(p)
+# for each in txt:
+#     print(each)     # symbols one by one are printed row by row
+
+# with open("c:/tmp/file1.txt", 'a+') as file:
+#     file.write("Hello1\n")
+#     file.write("Hello2\n")
+#     file.write("Hello3\n")
+#     file.seek(0)
+#     print(file.read())
+
+# with open("c:/tmp/file1.txt") as file:
+#     print(file.read())
+
+# with open("c:/tmp/file1.txt") as file1:
+#     print("Output of readline for specific lines is:")
+#     print(*file1.readlines()[4:10], sep="")
+
+lst = [a for a in range(10000)]
+# print(lst)
+dct = {k: k*k for k in range(10000)}
+# print(dct)
+
+tpl = tuple(a for a in range(10000))
+# for a in tpl:
+#     print(a)
+    # print(tpl) for i in range(:
+
+# st = {i**2 for i in range(10) if i != 5 and i**2 % 10 in (0,4,9)}
+# print(tpl.__sizeof__())
+# print(lst.__sizeof__())
+# print(dct.__sizeof__())
+# print(st)
+
+def func(n):
+    res = []
+    cnt = 0
+    while cnt < n:
+        res.append(cnt)
+        cnt += 1
+# start = time.time()
+# func(1000)
+# print(time.time() - start)
+#
+# start = time.time()
+# func(100_000_000)
+# print(time.time() - start)
+
+# def func2():
+#     yield 1
+# # print(func2())
+# print(next(func2()))
+# print(next(func2()))
+
+
+# def func2():
+#     print("Start")
+#
+#     yield 1
+#     print("Give me more")
+#     yield 2
+#     print("Finish")
+#     return 1
+# c = func2()
+# print(next(c))
+# print("It is the general flow")
+# print(next(c))
+# print(c)
+
+# def func3(n):
+#     cnt = 4
+#     yield cnt
+#     cnt = 0
+#     while cnt < n:
+#         yield cnt
+#         cnt += 1
+#
+# d = func3(30)
+# print(next(d))
+# print(next(d))
+# print(next(d))
+# print(next(d))
+# print(4 in d)
+# print(2 in d)
+# print(4 in d)
+# print(18 in d)
+# d = func3(30)
+
+# print(1 in d)
+#
+# # print(18 in d)
+# print(19 in d)
+#
+# print(28 in d)
+
+s = "0123456789"
+# lst = []
+lst = list(map(int, s))
+# print(next(lst))
+# print(next(lst))
+# print(next(lst))
+# print(next(lst))
+# print(next(lst))
+print(lst)
+print(dir(lst))
+# for i in s:
+#     lst.append(int(i))
+# print(lst)
