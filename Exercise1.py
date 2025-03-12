@@ -1,8 +1,7 @@
-
+from timeit import timeit
 
 x = 3
 y = x
-
 
 # Types of data
 # The following types are not mutual
@@ -240,8 +239,8 @@ import math
 # name = "Alexander"
 # num = float(input("Enter some number: "))
 
-#print("The entered number is ", num," You", name, " are a king!")
-#print(f"The entered number is {num:.3f}. You {name} are a king")
+# print("The entered number is ", num," You", name, " are a king!")
+# print(f"The entered number is {num:.3f}. You {name} are a king")
 
 # print(f"The price is {20 * 59} dollars. You {name} are a king")
 #
@@ -355,6 +354,7 @@ import math
 
 
 import time
+
 # lst = [ i for i in range(50_000_000)]
 # lst = list(range(50_000_000))
 # tpl = tuple(range(50_000_000))
@@ -438,7 +438,6 @@ import time
 #     print("You live in", city)
 #
 # hello("Alexander", "Ashdod")
-
 
 
 # def max2(x, y):
@@ -862,6 +861,7 @@ lst1 = list(range(1000))
 #     print(" "*(size-i)+"*"*i)
 
 from pprint import pprint
+
 # Dictionary
 # thisdict = {
 #     "brand":"Ford",
@@ -877,7 +877,7 @@ from pprint import pprint
 # x = thisdict.get("Model") # not case sensitive
 # print(x)
 
-dct = dict(name = "John", age = 36, country = "Ireland", city = 'Dublin', car = 'Rover')
+dct = dict(name="John", age=36, country="Ireland", city='Dublin', car='Rover')
 # pprint(dct)
 dct["watch"] = "Seiko"
 #
@@ -1111,12 +1111,11 @@ dct["watch"] = "Seiko"
 # Home exercise
 # Validity of parentheses "{f[t(r<dfgsdf,dsfds>)dsdfs]sdfd}"
 
-#LIFO --- FIFO
+# LIFO --- FIFO
 # if 5 < 8:
 #     print("Ok")
 #
 # print("ok") if 5 < 8 else print()
-
 
 
 # def is_balanced(st):
@@ -1206,13 +1205,13 @@ dct["watch"] = "Seiko"
 # test_list_operations(nums)
 
 # with open("c:/tmp/file1.txt", encoding='utf8') as f:
-    # print(f.read())
-    # text = f.read()
-    # f.seek(20)
-    # txt = f.readline()
-    # p = f.tell()
-    # for line in f:
-    #     print(line, end="")
+# print(f.read())
+# text = f.read()
+# f.seek(20)
+# txt = f.readline()
+# p = f.tell()
+# for line in f:
+#     print(line, end="")
 # print(txt)
 # print(text)
 # print(p)
@@ -1235,13 +1234,15 @@ dct["watch"] = "Seiko"
 
 lst = [a for a in range(10000)]
 # print(lst)
-dct = {k: k*k for k in range(10000)}
+dct = {k: k * k for k in range(10000)}
 # print(dct)
 
 tpl = tuple(a for a in range(10000))
+
+
 # for a in tpl:
 #     print(a)
-    # print(tpl) for i in range(:
+# print(tpl) for i in range(:
 
 # st = {i**2 for i in range(10) if i != 5 and i**2 % 10 in (0,4,9)}
 # print(tpl.__sizeof__())
@@ -1255,6 +1256,8 @@ def func(n):
     while cnt < n:
         res.append(cnt)
         cnt += 1
+
+
 # start = time.time()
 # func(1000)
 # print(time.time() - start)
@@ -1310,16 +1313,203 @@ def func(n):
 #
 # print(28 in d)
 
-s = "0123456789"
+# s = "0123456789"
 # lst = []
-lst = list(map(int, s))
+# lst = list(map(int, s))
 # print(next(lst))
 # print(next(lst))
 # print(next(lst))
 # print(next(lst))
 # print(next(lst))
-print(lst)
-print(dir(lst))
+# print(lst)
+# print(dir(lst))
 # for i in s:
 #     lst.append(int(i))
 # print(lst)
+
+# iterator - Поток данных, который по востребованию выдает следующий элемент, но не хранит весь набор данных внутри себя
+# generator - Функция, которая создает итератор, но не возвращает результат для всех значений, а только следующее значение
+# Вместо return используется yield
+# __next__() - returns next element
+# __iter__() - method, that says that the element has iterable
+# iterable: list, dictionary, set, tuple, string
+# for iterable works - for, in, len
+# for iterator works - for, in, but doesn't work len
+
+# st = "Hello,world!"
+# print(dir(st))
+# iter_st = iter(st)
+# lst = [1,2,3]
+# iter_lst = iter(lst)
+# print(len(iter_lst))
+# print(next(iter_lst))
+# print(next(iter_lst))
+# print(next(iter_lst))
+# print(next(iter_lst))
+
+# lst = [x for x in range(1, 5000001)]
+# it_lst = iter(lst)
+
+# start = time.time()
+# for i in range(1,len(lst)):
+#     lst[i]=lst[i]**2
+# print(lst[4990000])
+# print(f"time of lst working: {time.time() - start}")
+# print("Memory usage of list:",lst.__sizeof__())
+#
+#
+# lst2 = [x for x in range(1, 5000001)]
+# start = time.time()
+# it_lst = map(lambda x: x**2, lst2)
+# for i in range(4990000):
+#     next(it_lst)
+# print(next(it_lst))
+# print(f"time of map iterator working: {time.time() - start}")
+# print("Memory usage of map iterator:",it_lst.__sizeof__())
+
+# car_dict = {'a': 'Mercedes-Benz', 'b': 'BMW00', 'c': 'Ferrari', 'd': 'Lamborghini', 'e': 'Jeep'}
+# # _2025
+#
+# car_dict2 = dict(map(lambda a: (a[0],a[1]+'_2025'), car_dict.items()))
+#
+# print(car_dict2)
+import prime
+
+# lst = [x for x in range(1,101)]
+# # print(lst)
+#
+# print(*filter(prime.fast_prime, lst))
+# print(*filter(lambda p: not prime.fast_prime(p),lst))
+
+# tpl = tuple(i for i in range(1000000))
+# start = time.time()
+# print( max(*filter(prime.fast_prime,tuple(i for i in range(10000000)))) )
+# print( time.time() - start)
+# start = time.time()
+# print( tuple(filter(prime.fast_prime, tuple(i for i in range(10000000))))[-1] )
+# print( time.time() - start)
+
+# lst = [4, -7, 3, 5, 9, -16, 25]
+# print(list(map(lambda x: x**0.5, filter(lambda y: y>=0, lst))))
+
+
+# def fibo_gen():
+#     a, b = 0, 1
+#     while True:
+#         yield a
+#         a, b = b, a + b
+#
+#
+# number = 800
+# fib = fibo_gen()
+# print(fib)
+# for _ in range(number):
+#     next(fib)
+#
+# print(next(fib))
+# from collections.abc import Iterable
+#
+# def flatten(it):
+#     for i in it:
+#         if isinstance(i,  Iterable):
+#             yield from flatten(i)
+#         else:
+#             yield i
+#
+#
+# items = [[0, 1, 2], 3, 4, True, [[5], (6.56, 7)], [[[8]], 9]]
+# print(list(flatten(items)))
+
+
+# 7*3+1=22 /2 = 11*3+1 -17 52 26 13 40
+
+# def collatz(n):
+#     yield n
+#     while n != 1:
+#         n = n / 2 if n % 2 == 0 else 3 * n + 1
+#         yield int(n)
+# cnt = 1
+# length = 1
+# num = 19
+# for i in range(1, num+1):
+#     ls = list(collatz(i))
+#     if len(ls) > length:
+#         length = len(ls)
+#     cnt = i
+# print(list(collatz(cnt)))
+# print(f"Number {num} contains {length} elements in Collatz iterable")
+
+# zip
+# a = ["John","Charles", "Mike", "Ben"]
+# b = ("Jenny", "Mary", "Sarah", "Margareth")
+# c = (2, 4, 3, 1)
+# try:
+#     x = zip(a, b, c, strict=True)
+#     print(list(x))
+# except ValueError as er:
+#     print(er)
+#
+# print(list(zip(a)))
+#
+# for m, w in zip(a, b):
+#     print(f"Man: {m}")
+#     print(f"Woman: {w}")
+#     Unpacking zipped list
+
+# families = [('John', 'Jenny', 2), ('Charles', 'Mary', 4), ('Mike', 'Sarah', 3), ('Ben', 'Margareth', 1)]
+#
+# men, women, children = zip(*families)
+# print(men)
+# print(women)
+# print(children)
+
+from collections import namedtuple
+
+
+# marks = (98, 80, 95)
+# print(marks[2])
+
+# Marks = namedtuple('Marks', 'Physic Chemistry Math English')
+# marks = Marks((90, 92,98), 85, 100, 97)
+# print(marks)
+# dct = {
+#     'Physic': (90, 92,98),
+#     'Chemistry': 85,
+#     'Math': 100,
+#     'English': 97
+# }
+# print(dct)
+# print(marks.__sizeof__())
+# print(dct.__sizeof__())
+# Marks_d = namedtuple('Marks_d', dct)
+# print(Marks_d)
+
+# marks2 = Marks_d(0, 0, 0, 0)
+# print(marks2)
+
+# print(marks[1])
+# print(marks.Math)
+# # marks[2] = 90 # not valid operation
+# print(id(marks))
+# marks = marks._replace(Physic=70)
+# print(marks)
+# print(id(marks))
+
+# str1 = "hello"
+# str2 = " world"
+# x = 5
+# y = 10
+# print(str1.__add__(str2))
+# print(x.__add__(y))
+
+class Cat:
+    name = 'sphinx'
+    age = 5
+    color = 'brown'
+    count = 0
+
+    def voice(self):
+        print("Meow")
+
+
+print(dir(Cat))
