@@ -1502,14 +1502,278 @@ from collections import namedtuple
 # print(str1.__add__(str2))
 # print(x.__add__(y))
 
-class Cat:
-    name = 'sphinx'
-    age = 5
-    color = 'brown'
-    count = 0
+# class Cat:
+#     name = 'sphinx'
+#     age = 5
+#     color = 'brown'
+#     count = 0
+#
+#     def voice(self):
+#         print("Meow")
+#
+# c1 = Cat()
+# # print(dir(Cat))
+# def run(self):
+#     print("fast")
+# Cat.run = run
+# c1.run()
+# print(c1.__dir__())
 
-    def voice(self):
-        print("Meow")
+# Exercises
+# dct1 = {'Science': [88, 89, 62, 95], 'Language': [77, 78, 84, 80]}
+# # Output [{'Science': 88, 'Language': 77}, {'Science': 89, 'Language': 78}, {'Science': 62, 'Language': 84}, {'Science': 95, 'Language': 80}]
+#
+# def list_of_dicts(marks):
+#     keys = marks.keys()
+#     vals = zip(*[marks[k] for k in keys])
+#     # print(*vals)
+#     res = [dict(zip(keys, v)) for v in vals]
+#     return res
+# print(list_of_dicts(dct1))
+
+# dict1 = {'c1': 'Red', 'c2': 'Green', 'c3': (0, 0, 0)}
+#
+# dict1 = {key: value for key, value in dict1.items() if value}
+# print(dict1)
+
+lst2 = [1, 2, 3, 1, 2, 4, 5, 6, 7, 8, 3, 4, 5, 6, 7]
+# lst3 = set(lst2)
+#
+# dc = {}
+# for i in lst3:
+#     using function count()
 
 
-print(dir(Cat))
+# def first_non_repeated(ls):
+#     ctr = {}
+#     for i in ls:
+#         if i in ctr:
+#             ctr[i] += 1
+#         else:
+#             ctr[i] = 1
+#     for i in ls:
+#         if ctr[i] == 1:
+#             return i
+#     return
+#
+# print(first_non_repeated(lst2))
+
+# dct = {'a': 1, 'b': {'c': {'d': {}}}}
+# dct = {1:{}}
+#
+# def depth(d):
+#     if isinstance(d, dict):
+#         return 1 + (max(map(depth, d.values())) if d else 0)
+#     return 0
+#
+# print(depth(dct))
+
+# class Dog:
+#     def __init__(self,name, age, tail, food):
+#         self.name = name
+#         self.__age = age
+#         self.tail = tail
+#         self.food = food
+#     def __eat(self):
+#         self.food += " and water"
+#         print("I eat",self.food)
+#
+#     def meet(self):
+#         print(f"my name is {self.name},I am {self.__age} years old and I have the tail {self.tail}cm")
+#         self.__eat()
+#
+# d1 = Dog("Sharik", 5, 30, "meat")
+# print(d1.name)
+# d2 = Dog("Barsik", 3, 25, "Pedigree")
+# # d1.eat()
+# print(d1.name)
+# d1.eat()
+# d2.eat()
+# d1.meet()
+# d2.meet()
+
+class Figure:
+    name = "Figure"
+    width = 2
+    def draw(self):
+        print("Figure drawing")
+
+    def perim(self):
+        print("Each figure should have some perimeter")
+
+# print(Figure.width)
+
+class Rectangle(Figure):
+    """This class is description of rectangles and several actions with them,
+    such as perimeter calculation and other. We created it for
+    practice in Python OOP and to demonstrate how we can change help for object"""
+
+    def __init__(self, w, h):
+        self.w = w
+        self.h = h
+
+    def perim(self):
+        return 2 * (self.w + self.h)
+
+    def __str__(self):
+        return f"It is my class {self.__class__}"
+
+r1 = Rectangle(3, 5)
+# r1.draw()
+# print(r1.perim())
+# print(Figure.__bases__)
+# print(Rectangle.__bases__)
+# print(Rectangle.mro())
+
+# help(Rectangle)
+# print(r1)
+
+# class Line:
+#     color = "black"
+#
+# class Square(Figure, Line):
+#     def __init__(self, a):
+#         self.a = a
+#
+#     def perim(self):
+#         return 4 * self.a
+#
+# class Triangle(Figure):
+#     def __init__(self, a, b, c):
+#         self.a = a
+#         self.b = b
+#         self.c = c
+#
+#     def perim(self):
+#         return self.a + self.b + self.c
+#
+# s1 = Square(10)
+# t1 = Triangle(3, 4 ,5)
+# # print(s1.perim())
+# # print(t1.perim())
+#
+# fig = [Rectangle(3, 5), Square(10), Triangle(3, 4 ,5), Triangle(6, 9 ,2), Square(7)]
+# print(s1.color)
+# for f in fig:
+#     print(f.perim())
+
+# class Vector(list):
+#     def __str__(self):
+#         return "/ ".join(map(str, self))
+#
+# v = Vector([1, 3, 5])
+# print(type(v))
+# print(v[2], v[0])
+# v.append(7)
+# print(v)
+
+# from abc import ABC, abstractmethod
+# class AbstractAnimal(ABC):
+#     @abstractmethod
+#     def speak(self):
+#         print("rrrrr")
+
+
+# class Dog(AbstractAnimal):
+#     def speak(self):
+#         print("wouf-wouf")
+#     def eat(self):
+#         print("nyam-nyam")
+#
+# d1 = Dog()
+# d1.speak()
+# d1.eat()
+# print(dir(Dog))
+
+# class Calculator:
+#     def add(self, a, b = 0, c = 0):
+#         return a + b + c
+#
+# calc = Calculator()
+# print(calc.add(2, 4, 6))
+# print(calc.add(2, 4))
+# print(calc.add(2))
+
+# class Parent:
+#     def show(self):
+#         print("This is the parent class")
+#
+# class Child(Parent):
+#     def show(self):
+#         print("This is child class")
+#         super().show()
+#
+# child = Child()
+# child.show()
+
+# dunder methods - Magic methods
+
+# class Dog:
+#     pass
+# print(dir(Dog))
+# d1 = Dog()
+# print(dir(Dog))
+
+# class Counter:
+#     def __init__(self):
+#         self.__counter = 0
+#
+#     def __call__(self, *args, **kwargs):
+#         self.__counter += 1
+#         return self.__counter
+#     def __str__(self):
+#         return "it is my class"
+# c = Counter()
+# c()
+# c()
+# c()
+# c()
+#
+# print(c())
+
+class My_arr(list):
+    "This is help for my ny type, just crazy list"
+    def __init__(self, it):
+        try:
+            for i in it:
+                if not isinstance(i, (int, float, bool)):
+                    raise NotImplementedError
+                else:
+                    super().__init__(sorted(it))
+            self.it = it
+        except (NotImplementedError, TypeError):
+            print("You can't use my type for these values")
+
+    def __str__(self):
+        return f"<<{', '.join(str(item) for item in self)}>>"
+
+    def append(self, __object):
+        try:
+            if not isinstance(__object, (int, float, bool)):
+                raise NotImplementedError
+            else:
+                super().append(__object)
+                self.sort()
+        except (NotImplementedError, TypeError):
+            print("You can't use my type for these values")
+
+    def __len__(self):
+        cnt = 0
+        for i in self:
+            if i >= 0:
+                cnt += 1
+        return cnt
+
+    def __call__(self, *args, **kwargs):
+        print(self)
+        return self
+
+l = My_arr([4, -6, 2, 0])
+print(l)
+l.append(-100)
+l.append(2)
+l.append(-55)
+print(l)
+print(len(l))
+new_lst = l()
+print(new_lst)
