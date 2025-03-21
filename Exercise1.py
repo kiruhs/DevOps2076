@@ -1536,7 +1536,7 @@ from collections import namedtuple
 # dict1 = {key: value for key, value in dict1.items() if value}
 # print(dict1)
 
-lst2 = [1, 2, 3, 1, 2, 4, 5, 6, 7, 8, 3, 4, 5, 6, 7]
+# lst2 = [1, 2, 3, 1, 2, 4, 5, 6, 7, 8, 3, 4, 5, 6, 7]
 # lst3 = set(lst2)
 #
 # dc = {}
@@ -1730,50 +1730,95 @@ r1 = Rectangle(3, 5)
 # c()
 #
 # print(c())
+# from collections.abc import Iterable
+from _collections_abc import Iterable
+# class My_arr(list):
+#     "This is help for my ny type, just crazy list"
+#     def __init__(self, it):
+#         try:
+#             for i in it:
+#                 if not isinstance(i, (int, float, bool)):
+#                     raise NotImplementedError
+#                 else:
+#                     super().__init__(sorted(it))
+#             self.it = it
+#         except (NotImplementedError, TypeError):
+#             print("You can't use my type for these values")
+#
+#     def __str__(self):
+#         return f"<<{', '.join(str(item) for item in self)}>>"
+#
+#     def append(self, __object):
+#         try:
+#             if not isinstance(__object, (int, float, bool)):
+#                 raise NotImplementedError
+#             else:
+#                 super().append(__object)
+#                 self.sort()
+#         except (NotImplementedError, TypeError):
+#             print("You can't use my type for these values")
+#
+#     def __len__(self):
+#         cnt = 0
+#         for i in self:
+#             if i >= 0:
+#                 cnt += 1
+#         return cnt
+#
+#     def __call__(self, *args, **kwargs):
+#         print(self)
+#         return self
+#
+#     def __add__(self, other):
+#         if isinstance(other, (list, My_arr)):
+#             return My_arr(super().__add__(other))
+#
+#
+#
+#     def __sub__(self, other):
+#         if other > super().__len__():
+#             print("The number is greater than list length")
+#             return None
+#         for i in range(other):
+#             self.pop()
+#         return self
+#
+#     @property
+#     def even(self):
+#         return My_arr([i for i in self if i % 2 == 0])
+#
+#
+# l = My_arr([4, -6, 1, 0])
+# # l2 = l
+# print(l)
+# # print(dir(l))
+# l.append(2)
+# l.append(-55)
+# print(l)
+# print(len(l))
+# new_lst = l()
+# print(new_lst)
+#
+# lst1 = [3,6,0]
+# lst2 = [8,9,5]
+# print(l-0)
+# print(l.even)
 
-class My_arr(list):
-    "This is help for my ny type, just crazy list"
-    def __init__(self, it):
-        try:
-            for i in it:
-                if not isinstance(i, (int, float, bool)):
-                    raise NotImplementedError
-                else:
-                    super().__init__(sorted(it))
-            self.it = it
-        except (NotImplementedError, TypeError):
-            print("You can't use my type for these values")
-
-    def __str__(self):
-        return f"<<{', '.join(str(item) for item in self)}>>"
-
-    def append(self, __object):
-        try:
-            if not isinstance(__object, (int, float, bool)):
-                raise NotImplementedError
-            else:
-                super().append(__object)
-                self.sort()
-        except (NotImplementedError, TypeError):
-            print("You can't use my type for these values")
-
-    def __len__(self):
-        cnt = 0
-        for i in self:
-            if i >= 0:
-                cnt += 1
-        return cnt
-
-    def __call__(self, *args, **kwargs):
-        print(self)
-        return self
-
-l = My_arr([4, -6, 2, 0])
-print(l)
-l.append(-100)
-l.append(2)
-l.append(-55)
-print(l)
-print(len(l))
-new_lst = l()
-print(new_lst)
+# class A:
+#     def show(self):
+#         print("A")
+#
+# class B(A):
+#     def show(self):
+#         print("B")
+#
+# class C(A):
+#     def show(self):
+#         print("C")
+#
+# class D(C, B):
+#     pass
+#
+# d = D()
+# d.show()
+# print(D.mro())

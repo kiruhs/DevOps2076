@@ -24,3 +24,14 @@ def prime_classic(n):
         if flag:
             return False
         return True
+import time
+def timer(func):
+    # Print the runtime of the decorated function
+    def wrapper_timer(*args, **kwargs):
+        start = time.time()
+        value = func(*args, **kwargs)
+        end = time.time()
+        run_time = end - start
+        print(f"Finished {func.__name__}() in {run_time:.4f} secs")
+        return value
+    return wrapper_timer
