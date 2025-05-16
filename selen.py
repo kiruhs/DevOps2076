@@ -1,0 +1,67 @@
+from time import sleep
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
+from credent import *
+driver = webdriver.Chrome()
+
+driver.maximize_window()
+driver.get("https://walla.co.il")
+# search = driver.find_element(By.ID, 'APjFqb')
+# search.click()
+# search.send_keys("python")
+# driver.find_element(By.NAME, 'btnK').click()
+# sleep(2)
+
+# driver.find_element(By.CLASS_NAME, 'gb_X').click()
+# sleep(2)
+# driver.find_element(By.XPATH, '//*[@id="m2"]/div/div/div[1]/div[2]/div/gws-dropdown-button').click()
+# sleep(1)
+# driver.find_element(By.XPATH, '//*[@id="m2"]/div/div/div[1]/div[2]/div/gws-dropdown-button/a[1]').click()
+# sleep(1)
+# fname = driver.find_element(By.ID, 'firstName')
+# fname.click()
+# fname.send_keys("Alexander")
+#
+# lname = driver.find_element(By.ID, 'lastName')
+# lname.click()
+# lname.send_keys('Makedonsky')
+# fname.send_keys(Keys.ENTER)
+# sleep(1)
+#
+# month = Select(driver.find_element(By.ID, 'month'))
+
+driver.find_element(By.XPATH, '//*[@id="root"]/div/div/header/div[1]/div[1]/div[3]/div[3]/a').click()
+sleep(3)
+driver.find_element(By.XPATH,'//*[@id="wrapper"]/section/fieldset/a').click()
+sleep(1)
+uname = driver.find_element(By.ID, 'username')
+uname.click()
+uname.send_keys(username)
+passwd = driver.find_element(By.CLASS_NAME, 'password-field')
+passwd.click()
+passwd.send_keys(password)
+fname = driver.find_element(By.ID, 'fname')
+fname.click()
+fname.send_keys("Alexander")
+lname = driver.find_element(By.ID, 'sname')
+lname.click()
+lname.send_keys("Makedonsky")
+phone = driver.find_element(By.ID, 'postfix')
+phone.click()
+phone.send_keys("0548888888")
+sleep(1)
+day = Select(driver.find_element(By.XPATH, '/html/body/app-root/div/div/div[1]/main/div/app-register/form/fieldset/section/ul/li[6]/app-date-picker/form/div[3]/select'))
+day.select_by_value('30')
+month = Select(driver.find_element(By.XPATH, '/html/body/app-root/div/div/div[1]/main/div/app-register/form/fieldset/section/ul/li[6]/app-date-picker/form/div[2]/select'))
+month.select_by_value('11')
+year = Select(driver.find_element(By.XPATH, '/html/body/app-root/div/div/div[1]/main/div/app-register/form/fieldset/section/ul/li[6]/app-date-picker/form/div[1]/select'))
+year.select_by_value('1971')
+sleep(2)
+driver.find_element(By.ID, 'gender-input-0').click()
+driver.find_element(By.XPATH, '/html/body/app-root/div/div/div[1]/main/div/app-register/form/fieldset/section/ul/li[8]/label/span').click()
+driver.find_element(By.ID, 'submit-button').click()
+sleep(8)
+
+driver.quit()
